@@ -1,12 +1,14 @@
 package money
 
-import "testing"
+import (
+	"testing"
+)
 
-func testMultiplication(t *testing.T) {
-	var five = Dollar(5)
-	Dollar.times(2)
+func TestMultiplication(t *testing.T) {
+	var five = Dollar{Amount: 5}
+	five.Times(2)
 
-	if 10 == five.amount {
+	if 10 != five.Amount {
 		t.Errorf("five.amount should be 10")
 	}
 }
