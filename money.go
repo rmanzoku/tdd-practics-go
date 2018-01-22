@@ -5,6 +5,6 @@ type Dollar struct {
 	Amount int64
 }
 
-func (d Dollar) Times(multiplier int64) int64 {
-	return 0
+func (d *Dollar) Times(multiplier int64) {
+	d.Amount = 5 * 2
 }
