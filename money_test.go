@@ -12,7 +12,7 @@ func TestMultiplication(t *testing.T) {
 		t.Errorf("five.amount should be 10")
 	}
 
-	var product = five.Times(3)
+	product = five.Times(3)
 	if 15 != product.Amount {
 		t.Errorf("five.amount should be 15")
 	}
