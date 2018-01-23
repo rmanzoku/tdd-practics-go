@@ -2,20 +2,20 @@ package money
 
 // Dollar is dollar struct
 type Dollar struct {
-	Amount int64
+	amount int64
 }
 
 func NewDollar(amount int64) *Dollar {
 	d := new(Dollar)
-	d.Amount = amount
+	d.amount = amount
 
 	return d
 }
 
 func (d Dollar) Times(multiplier int64) *Dollar {
-	return NewDollar(d.Amount * multiplier)
+	return NewDollar(d.amount * multiplier)
 }
 
-func (d Dollar) Equals(input Dollar) bool {
-	return (d.Amount == input.Amount)
+func (d Dollar) Equals(input *Dollar) bool {
+	return (d.amount == input.amount)
 }

@@ -17,11 +17,11 @@ func TestMultiplication(t *testing.T) {
 }
 
 func TestEquality(t *testing.T) {
-	var product = Dollar{Amount: 5}
-	if !product.Equals(Dollar{Amount: 5}) {
+	var product = NewDollar(5)
+	if !product.Equals(NewDollar(5)) {
 		t.Errorf("Dollar equals Dollar")
 	}
-	if product.Equals(Dollar{Amount: 6}) {
+	if product.Equals(NewDollar(6)) {
 		t.Errorf("Dollar equals Dollar")
 	}
 }
