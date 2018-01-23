@@ -26,7 +26,7 @@ func TestEquality(t *testing.T) {
 	}
 }
 
-func TestMultiplication(t *testing.T) {
+func TestFrancMultiplication(t *testing.T) {
 	var five = NewFranc(5)
 
 	if *NewFranc(10) != *five.Times(2) {
