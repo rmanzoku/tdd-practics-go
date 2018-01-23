@@ -9,6 +9,6 @@ func (d *Dollar) Times(multiplier int64) Dollar {
 	return Dollar{Amount: d.Amount * multiplier}
 }
 
-func (d Dollar) Equals(obj Dollar) bool {
-	return true
+func (d Dollar) Equals(input Dollar) bool {
+	return (d.Amount == input.Amount)
 }
