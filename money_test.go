@@ -25,3 +25,15 @@ func TestEquality(t *testing.T) {
 		t.Errorf("Dollar equals Dollar")
 	}
 }
+
+func TestMultiplication(t *testing.T) {
+	var five = NewFranc(5)
+
+	if *NewFranc(10) != *five.Times(2) {
+		t.Errorf("ten != five.Times(2)")
+	}
+
+	if *NewFranc(15) != *five.Times(3) {
+		t.Errorf("fifteen != five.Times(3)")
+	}
+}
