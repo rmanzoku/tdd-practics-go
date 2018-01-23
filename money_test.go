@@ -7,14 +7,14 @@ import (
 func TestMultiplication(t *testing.T) {
 	var five = Dollar{Amount: 5}
 
-	var product = five.Times(2)
-	if 10 != product.Amount {
-		t.Errorf("five.amount should be 10")
+	ten := Dollar{Amount: 10}
+	if ten != five.Times(2) {
+		t.Errorf("ten != five.Times(2)")
 	}
 
-	product = five.Times(3)
-	if 15 != product.Amount {
-		t.Errorf("five.amount should be 15")
+	fifteen := Dollar{Amount: 15}
+	if fifteen != five.Times(3) {
+		t.Errorf("fifteen != five.Times(3)")
 	}
 }
 
