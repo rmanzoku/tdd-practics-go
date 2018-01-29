@@ -1,6 +1,6 @@
 package money
 
-// Franc is dollar struct
+// Franc is franc struct
 type Franc struct {
 	amount int64
 }
