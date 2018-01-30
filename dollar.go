@@ -3,7 +3,6 @@ package money
 // Dollar is dollar struct
 type Dollar struct {
 	Money
-	amount int64
 }
 
 func NewDollar(amount int64) *Dollar {
