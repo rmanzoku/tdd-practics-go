@@ -24,6 +24,13 @@ func TestEquality(t *testing.T) {
 	if product.Equals(NewDollar(6)) {
 		t.Errorf("Dollar equals Dollar")
 	}
+	var productf = NewFranc(5)
+	if !productf.Equals(NewFranc(5)) {
+		t.Errorf("Dollar equals Dollar")
+	}
+	if productf.Equals(NewFranc(6)) {
+		t.Errorf("Dollar equals Dollar")
+	}
 }
 
 func TestFrancMultiplication(t *testing.T) {

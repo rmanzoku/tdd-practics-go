@@ -2,7 +2,7 @@ package money
 
 // Franc is franc struct
 type Franc struct {
-	amount int64
+	Money
 }
 
 func NewFranc(amount int64) *Franc {
