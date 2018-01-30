@@ -2,6 +2,7 @@ package money
 
 // Dollar is dollar struct
 type Dollar struct {
+	Money
 	amount int64
 }
 
