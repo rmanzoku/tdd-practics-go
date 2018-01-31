@@ -18,18 +18,18 @@ func TestMultiplication(t *testing.T) {
 
 func TestEquality(t *testing.T) {
 	var product = NewDollar(5)
-	if !product.Equals(NewDollar(5)) {
+	if !product.Equals(*NewDollar(5)) {
 		t.Errorf("Dollar equals Dollar")
 	}
-	if product.Equals(NewDollar(6)) {
+	if product.Equals(*NewDollar(6)) {
 		t.Errorf("Dollar equals Dollar")
 	}
 	var productf = NewFranc(5)
-	if !productf.Equals(NewFranc(5)) {
-		t.Errorf("Dollar equals Dollar")
+	if !productf.Equals(*NewFranc(5)) {
+		t.Errorf("Franc equals Franc")
 	}
-	if productf.Equals(NewFranc(6)) {
-		t.Errorf("Dollar equals Dollar")
+	if productf.Equals(*NewFranc(6)) {
+		t.Errorf("Franc equals Franc")
 	}
 }
 

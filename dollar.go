@@ -15,7 +15,3 @@ func NewDollar(amount int64) *Dollar {
 func (d Dollar) Times(multiplier int64) *Dollar {
 	return NewDollar(d.amount * multiplier)
 }
-
-func (d Dollar) Equals(input *Dollar) bool {
-	return (d.amount == input.amount)
-}
