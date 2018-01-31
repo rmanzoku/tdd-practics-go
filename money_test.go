@@ -21,6 +21,10 @@ func TestEquality(t *testing.T) {
 	if !product.Equals(*NewDollar(5)) {
 		t.Errorf("Dollar equals Dollar")
 	}
+	if product.Equals(5) {
+		t.Errorf("Dollar equals Int")
+	}
+
 	if product.Equals(*NewDollar(6)) {
 		t.Errorf("Dollar equals Dollar")
 	}

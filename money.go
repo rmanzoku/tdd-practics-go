@@ -9,7 +9,11 @@ type Money struct {
 }
 
 func isMoneyObj(input interface{}) bool {
-	return reflect.ValueOf(input).FieldByName("Money").IsValid()
+	rv := reflect.ValueOf(input)
+	if rv.Kind() != reflect.Struct {
+		return false
+	}
+	return rv.FieldByName("Money").IsValid()
 }
 
 func (m Money) Equals(input interface{}) bool {
