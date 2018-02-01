@@ -15,3 +15,7 @@ func NewFranc(amount int64) *Franc {
 func (d Franc) Times(multiplier int64) *Money {
 	return NewMoney(d.amount * multiplier)
 }
+
+func (d Franc) Currency() string {
+	return "CHF"
+}

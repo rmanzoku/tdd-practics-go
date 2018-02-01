@@ -65,10 +65,10 @@ func TestFrancMultiplication(t *testing.T) {
 }
 
 func TestCurrency(t *testing.T) {
-	if staticMoney.Dollar(1).Currency != "USD" {
+	if staticMoney.Dollar(1).Currency() != "USD" {
 		t.Errorf("Dollar currency is not USD")
 	}
-	if staticMoney.Franc(1).Currency != "CHF" {
+	if staticMoney.Franc(1).Currency() != "CHF" {
 		t.Errorf("Franc currency is not CHF")
 	}
 }
