@@ -39,3 +39,9 @@ func (m *Money) Equals(input interface{}) bool {
 	amount := rv.FieldByName("amount").Int()
 	return (m.amount == amount)
 }
+
+var staticMoney = NewMoney(0)
+
+func (m *Money) Dollar(amount int64) *Dollar {
+	return NewDollar(amount)
+}

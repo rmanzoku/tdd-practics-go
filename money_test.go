@@ -10,7 +10,7 @@ type dummyDollar struct {
 }
 
 func TestMultiplication(t *testing.T) {
-	var five = NewDollar(5)
+	var five = staticMoney.Dollar(5)
 
 	if NewDollar(10).Equals(five.Times(2)) {
 		t.Errorf("ten != five.Times(2)")
