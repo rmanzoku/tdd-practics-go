@@ -13,6 +13,6 @@ func NewFranc(amount int64, currency string) *Franc {
 	return f
 }
 
-func (f Franc) Times(multiplier int64) *Money {
-	return NewMoney(f.amount * multiplier)
+func (f Franc) Times(multiplier int64) *Franc {
+	return staticMoney.Franc(f.amount * multiplier)
 }
