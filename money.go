@@ -21,10 +21,12 @@ func isMoneyObj(input interface{}) bool {
 	return false
 }
 
-func (m Money) Equals(input interface{}) bool {
+func (m *Money) Equals(input interface{}) bool {
 	if !isMoneyObj(input) {
 		return false
 	}
+
+	//fmt.Println(reflect.TypeOf(m))
 
 	rv := reflect.ValueOf(input)
 	amount := rv.FieldByName("amount").Int()
