@@ -5,14 +5,14 @@ type Dollar struct {
 	Money
 }
 
-func NewDollar(amount int64) *Dollar {
+func NewDollar(amount int64, currency string) *Dollar {
 	d := new(Dollar)
 	d.amount = amount
-	d.currency = "USD"
+	d.currency = currency
 
 	return d
 }
 
-func (d Dollar) Times(multiplier int64) *Money {
-	return NewMoney(d.amount * multiplier)
+func (d Dollar) Times(multiplier int64) *Dollar {
+	return staticMoney.Dollar(d.amount * multiplier)
 }

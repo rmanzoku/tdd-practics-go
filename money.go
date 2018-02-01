@@ -49,7 +49,7 @@ func (m *Money) Equals(input interface{}) bool {
 var staticMoney = NewMoney(0)
 
 func (m *Money) Dollar(amount int64) *Dollar {
-	return NewDollar(amount)
+	return NewDollar(amount, "USD")
 }
 
 func (m *Money) Franc(amount int64) *Franc {
