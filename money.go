@@ -45,3 +45,7 @@ var staticMoney = NewMoney(0)
 func (m *Money) Dollar(amount int64) *Dollar {
 	return NewDollar(amount)
 }
+
+func (m *Money) Franc(amount int64) *Franc {
+	return NewFranc(amount)
+}

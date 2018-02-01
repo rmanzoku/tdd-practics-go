@@ -39,27 +39,27 @@ func TestEquality(t *testing.T) {
 	if product.Equals(*staticMoney.Dollar(6)) {
 		t.Errorf("Dollar equals Dollar")
 	}
-	var productf = NewFranc(5)
-	if !productf.Equals(*NewFranc(5)) {
+	var productf = staticMoney.Franc(5)
+	if !productf.Equals(*staticMoney.Franc(5)) {
 		t.Errorf("Franc equals Franc")
 	}
-	if productf.Equals(*NewFranc(6)) {
+	if productf.Equals(*staticMoney.Franc(6)) {
 		t.Errorf("Franc equals Franc")
 	}
 
-	// if NewFranc(5).Equals(*staticMoney.Dollar(5)) {
+	// if staticMoney.Franc(5).Equals(*staticMoney.Dollar(5)) {
 	// 	t.Errorf("Franc not equals Dollar")
 	// }
 }
 
 func TestFrancMultiplication(t *testing.T) {
-	var five = NewFranc(5)
+	var five = staticMoney.Franc(5)
 
-	if NewFranc(10).Equals(five.Times(2)) {
+	if staticMoney.Franc(10).Equals(five.Times(2)) {
 		t.Errorf("ten != five.Times(2)")
 	}
 
-	if NewFranc(15).Equals(five.Times(3)) {
+	if staticMoney.Franc(15).Equals(five.Times(3)) {
 		t.Errorf("fifteen != five.Times(3)")
 	}
 }
