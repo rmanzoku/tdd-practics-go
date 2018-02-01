@@ -21,6 +21,13 @@ func isMoneyObj(input interface{}) bool {
 	return false
 }
 
+func NewMoney(amount int64) *Money {
+	m := new(Money)
+	m.amount = amount
+
+	return m
+}
+
 func (m *Money) Equals(input interface{}) bool {
 	if !isMoneyObj(input) {
 		return false
