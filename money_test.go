@@ -63,3 +63,12 @@ func TestFrancMultiplication(t *testing.T) {
 		t.Errorf("fifteen != five.Times(3)")
 	}
 }
+
+func TestCurrency(t *testing.T) {
+	if staticMoney.Dollar(1).Currency != "USD" {
+		t.Errorf("Dollar currency is not USD")
+	}
+	if staticMoney.Franc(1).Currency != "CHF" {
+		t.Errorf("Franc currency is not CHF")
+	}
+}
