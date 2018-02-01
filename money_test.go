@@ -12,11 +12,11 @@ type dummyDollar struct {
 func TestMultiplication(t *testing.T) {
 	var five = NewDollar(5)
 
-	if *NewDollar(10) != *five.Times(2) {
+	if NewDollar(10).Equals(five.Times(2)) {
 		t.Errorf("ten != five.Times(2)")
 	}
 
-	if *NewDollar(15) != *five.Times(3) {
+	if NewDollar(15).Equals(five.Times(3)) {
 		t.Errorf("fifteen != five.Times(3)")
 	}
 }
@@ -55,11 +55,11 @@ func TestEquality(t *testing.T) {
 func TestFrancMultiplication(t *testing.T) {
 	var five = NewFranc(5)
 
-	if *NewFranc(10) != *five.Times(2) {
+	if NewFranc(10).Equals(five.Times(2)) {
 		t.Errorf("ten != five.Times(2)")
 	}
 
-	if *NewFranc(15) != *five.Times(3) {
+	if NewFranc(15).Equals(five.Times(3)) {
 		t.Errorf("fifteen != five.Times(3)")
 	}
 }
