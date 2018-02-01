@@ -5,7 +5,8 @@ import (
 )
 
 type Money struct {
-	amount int64
+	amount   int64
+	currency string
 }
 
 type Moneyable interface {
@@ -53,4 +54,8 @@ func (m *Money) Dollar(amount int64) *Dollar {
 
 func (m *Money) Franc(amount int64) *Franc {
 	return NewFranc(amount)
+}
+
+func (m Money) Currency() string {
+	return m.currency
 }
