@@ -3,19 +3,21 @@ package money
 // Franc is franc struct
 type Franc struct {
 	Money
+	currency string
 }
 
 func NewFranc(amount int64) *Franc {
-	d := new(Franc)
-	d.amount = amount
+	f := new(Franc)
+	f.amount = amount
+	f.currency = "CHF"
 
-	return d
+	return f
 }
 
-func (d Franc) Times(multiplier int64) *Money {
-	return NewMoney(d.amount * multiplier)
+func (f Franc) Times(multiplier int64) *Money {
+	return NewMoney(f.amount * multiplier)
 }
 
-func (d Franc) Currency() string {
-	return "CHF"
+func (f Franc) Currency() string {
+	return f.currency
 }
