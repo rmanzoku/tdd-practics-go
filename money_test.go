@@ -4,6 +4,11 @@ import (
 	"testing"
 )
 
+type dummyDollar struct {
+	Money  int64
+	amount int64
+}
+
 func TestMultiplication(t *testing.T) {
 	var five = NewDollar(5)
 
@@ -18,11 +23,17 @@ func TestMultiplication(t *testing.T) {
 
 func TestEquality(t *testing.T) {
 	var product = NewDollar(5)
-	if !product.Equals(*NewDollar(5)) {
-		t.Errorf("Dollar equals Dollar")
-	}
+
 	if product.Equals(5) {
 		t.Errorf("Dollar equals Int")
+	}
+
+	if product.Equals(dummyDollar{Money: 1, amount: 1}) {
+		t.Errorf("Money is not struct")
+	}
+
+	if !product.Equals(*NewDollar(5)) {
+		t.Errorf("Dollar equals Dollar")
 	}
 
 	if product.Equals(*NewDollar(6)) {

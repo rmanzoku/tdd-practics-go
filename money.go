@@ -13,7 +13,12 @@ func isMoneyObj(input interface{}) bool {
 	if rv.Kind() != reflect.Struct {
 		return false
 	}
-	return rv.FieldByName("Money").IsValid()
+	if rv.FieldByName("Money").IsValid() {
+		if rv.FieldByName("Money").Type() == reflect.TypeOf(Money{}) {
+			return true
+		}
+	}
+	return false
 }
 
 func (m Money) Equals(input interface{}) bool {
