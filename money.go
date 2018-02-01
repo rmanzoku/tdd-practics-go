@@ -8,6 +8,11 @@ type Money struct {
 	amount int64
 }
 
+type Moneyable interface {
+	Currency() string
+	Times(int64) Money
+}
+
 func isMoneyObj(input interface{}) bool {
 	rv := reflect.ValueOf(input)
 	if rv.Kind() != reflect.Struct {
