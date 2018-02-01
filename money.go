@@ -53,7 +53,7 @@ func (m *Money) Dollar(amount int64) *Dollar {
 }
 
 func (m *Money) Franc(amount int64) *Franc {
-	return NewFranc(amount)
+	return NewFranc(amount, "")
 }
 
 func (m Money) Currency() string {

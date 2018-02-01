@@ -5,7 +5,7 @@ type Franc struct {
 	Money
 }
 
-func NewFranc(amount int64) *Franc {
+func NewFranc(amount int64, currency string) *Franc {
 	f := new(Franc)
 	f.amount = amount
 	f.currency = "CHF"
