@@ -12,17 +12,17 @@ type dummyDollar struct {
 func TestMultiplication(t *testing.T) {
 	var five = staticMoney.Dollar(5)
 
-	if NewDollar(10).Equals(five.Times(2)) {
+	if staticMoney.Dollar(10).Equals(five.Times(2)) {
 		t.Errorf("ten != five.Times(2)")
 	}
 
-	if NewDollar(15).Equals(five.Times(3)) {
+	if staticMoney.Dollar(15).Equals(five.Times(3)) {
 		t.Errorf("fifteen != five.Times(3)")
 	}
 }
 
 func TestEquality(t *testing.T) {
-	var product = NewDollar(5)
+	var product = staticMoney.Dollar(5)
 
 	if product.Equals(5) {
 		t.Errorf("Dollar equals Int")
@@ -32,11 +32,11 @@ func TestEquality(t *testing.T) {
 		t.Errorf("Money is not struct")
 	}
 
-	if !product.Equals(*NewDollar(5)) {
+	if !product.Equals(*staticMoney.Dollar(5)) {
 		t.Errorf("Dollar equals Dollar")
 	}
 
-	if product.Equals(*NewDollar(6)) {
+	if product.Equals(*staticMoney.Dollar(6)) {
 		t.Errorf("Dollar equals Dollar")
 	}
 	var productf = NewFranc(5)
@@ -47,7 +47,7 @@ func TestEquality(t *testing.T) {
 		t.Errorf("Franc equals Franc")
 	}
 
-	// if NewFranc(5).Equals(*NewDollar(5)) {
+	// if NewFranc(5).Equals(*staticMoney.Dollar(5)) {
 	// 	t.Errorf("Franc not equals Dollar")
 	// }
 }
